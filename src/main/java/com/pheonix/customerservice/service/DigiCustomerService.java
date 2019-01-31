@@ -15,7 +15,7 @@ public class DigiCustomerService {
 	/*@Autowired
 	MongoTemplate mongoTemplate;*/
 
-	public void createRegistrationEvent(Registration registration) {
+	public void createRegistrations(Registration registration) {
 		
 		mongoOperations.save(registration);
 

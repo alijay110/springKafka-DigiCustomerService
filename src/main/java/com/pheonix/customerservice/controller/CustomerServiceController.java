@@ -42,6 +42,9 @@ public class CustomerServiceController {
 		return new ResponseEntity("customer particulars created", HttpStatus.CREATED);
 	}
 	
+	/*
+	 * not working need to check this
+	 */
 	@RequestMapping(path = "/particulars/address/{id}", method = RequestMethod.PATCH)
 	public ResponseEntity<CustomerDetails> createDGSApplication(@PathVariable("id") String id,@RequestBody Addresses addresses) {
 		

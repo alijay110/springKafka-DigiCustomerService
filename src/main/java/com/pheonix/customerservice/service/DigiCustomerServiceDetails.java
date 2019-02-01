@@ -33,12 +33,14 @@ public class DigiCustomerServiceDetails {
 		Query query = new Query();
 		query.addCriteria(Criteria.where("id").is(id));
 		
-		//DigitalService userTest1 = mongoOperations.findOne(query, DigitalService.class);
+		CustomerDetails userTest1 = mongoOperations.findOne(query, CustomerDetails.class);
 
-		//System.out.println("DigitalService find - " + userTest1);
+		System.out.println("CustomerDetails find - " + userTest1);
 
 		Update update = new Update();		
-		update.push("address", addresses);
+		//addresses.getAddress().stream().forEach(address -> update.push("address", address));
+		//update.pushAll("address", addresses);
+		update.push("address", addresses.getAddress());
 
 		CustomerDetails cgs =  mongoOperations.findAndModify(query, update, new FindAndModifyOptions().returnNew(true),CustomerDetails.class);
 		//System.out.println("DigitalService find - " + dgs);
